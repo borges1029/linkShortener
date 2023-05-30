@@ -15,7 +15,7 @@ class LinkController extends Controller
      */
     public function index()
     {
-        //
+        return Links::all();
     }
 
     /**
