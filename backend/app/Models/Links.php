@@ -7,10 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Links extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'url',
         'code',
         'slug',
         'clicks'
     ];
+
+    public static function create(array $all)
+    {
+    }
 }
