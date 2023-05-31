@@ -18,6 +18,11 @@ class LinksController extends Controller
                 'slug' => 'unique:links',
             ]);
 
+            $title = $request->input('title');
+            if (empty($title)) {
+                $title = $request->input('url');
+            }
+
             $slug = $request->input('slug');
             if (empty($slug)) {
                 $slug = $this->generateSlug();
@@ -28,8 +33,10 @@ class LinksController extends Controller
 
             // Preenchimento dos atributos do modelo com os dados recebidos
             $link->url = $request->url;
+            $link->title = $title;
             $link->slug = $slug;
-            $link->clicks = $request->clicks;
+            $link->clicks = 0;
+            $link->status = 1;
 
             // Salvando o modelo no banco de dados
             $link->save();
@@ -63,12 +70,29 @@ class LinksController extends Controller
         return response()->json($links, 200);
     }
 
+    public function getById($id)
+    {
+        $links = Links::all();
+
+        // Filtrar somente o link com o ID especificado
+        $filteredLinks = $links->filter(function ($link) use ($id) {
+            return $link->id == $id;
+        });
+
+        return response()->json($filteredLinks, 200);
+    }
+
     public function edit(Request $request, $id)
     {
         $request->validate([
             'url' => 'required|url',
             'slug' => 'unique:links',
         ]);
+
+        $title = $request->input('title');
+        if (empty($title)) {
+            $title = $request->input('url');
+        }
 
         $slug = $request->input('slug');
         if (empty($slug)) {
@@ -79,7 +103,9 @@ class LinksController extends Controller
 
         if ($link) {
             $link->url = $request->input('url');
+            $link->title = $title;
             $link->slug = $slug;
+            $link->status = $request->input('status');;
             $link->save();
 
             return response()->json(['message' => 'Link updated successfully'], 200);

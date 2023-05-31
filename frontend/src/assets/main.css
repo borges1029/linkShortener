@@ -1,0 +1,121 @@
+/** Telas **/
+@media (max-width: 767px) {
+  .desktop * {
+      display: none!important;
+  }
+}
+@media (min-width: 768px)and (max-width: 991px) {
+  .mobile * {
+      display: none!important;
+  }
+}
+@media (min-width: 992px)and (max-width: 1199px) {
+  .mobile * {
+    display: none!important;
+  }
+}
+@media (min-width: 1200px) {
+  .mobile * {
+    display: none!important;
+  }
+}
+
+body {
+  background-color: #f6f8fa!important;
+}
+
+.bg-white {
+  background-color: #fff!important;
+}
+
+.mt-6 {
+  margin-top: 5rem;
+}
+
+.rad-25 {
+  border-radius: 25px!important;
+}
+
+.rad-r-25 {
+  border-radius: 0px 25px 25px 0px!important;
+}
+
+.rad-l-25 {
+  border-radius: 25px 0px 0px 25px!important;
+}
+
+.navbar {
+  box-shadow: #9098a7b5 -1px 1px 10px;
+}
+
+.card {
+  box-shadow: #9098a7b5 0px 0px 7px;
+}
+
+.content-card, .icon-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-text > a {
+  text-decoration: none!important;
+  color: #677bf3;
+}
+
+.button-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-card > span, .button-card > span > i {
+  color: #9ba8b586;
+}
+
+.button-card > a, .button-card > button {
+  color: #9ba8b5;
+}
+
+
+.button-card > a:hover, .button-card > button:hover {
+  color: #1a1a1a;
+}
+
+.content-card > p {
+  color:#9ba8b5;
+}
+
+.icon-card > i {
+  font-size: 5rem;
+  color: #9ba8b547;
+}
+
+.links-shortener {
+  margin-bottom: 1rem;
+}
+
+.shortener {
+  float: left;
+}
+
+.shortener .btn {
+  background-color: #d6dcff;
+}
+
+.shortener .btn:hover, .shortener .btn:active, .shortener .btn:checked, .shortener .btn:focus-visible, .shortener .btn:target, .shortener .btn:visited {
+  background-color: #8b9bf8!important;
+}
+
+.filters {
+  float: right;
+}
+
+.alert-controller {
+  position: fixed !important;
+  top: 4rem !important;
+  right: 1rem !important;
+  z-index: 1100 !important;
+  max-width: 350px !important;
+}
