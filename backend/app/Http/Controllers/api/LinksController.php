@@ -24,6 +24,7 @@ class LinksController extends Controller
             }
 
             $slug = $request->input('slug');
+            $slug = str_replace(' ', '-', $slug);
             if (empty($slug)) {
                 $slug = $this->generateSlug();
             }
@@ -86,7 +87,7 @@ class LinksController extends Controller
     {
         $request->validate([
             'url' => 'required|url',
-            'slug' => 'unique:links',
+            'slug' => 'unique:links,slug,'.$id,
         ]);
 
         $title = $request->input('title');
@@ -95,6 +96,7 @@ class LinksController extends Controller
         }
 
         $slug = $request->input('slug');
+        $slug = str_replace(' ', '-', $slug);
         if (empty($slug)) {
             $slug = $this->generateSlug();
         }

@@ -35,7 +35,7 @@
         <div class="container mt-6">
             <div class="row">
                 <div class="col">
-                    <div class="card">
+                    <div class="card bk-3">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto icon-card">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card">
+                    <div class="card bk-2">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto icon-card">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card">
+                    <div class="card bk-1">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto icon-card">
@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card">
+                    <div class="card bk-0">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto icon-card">
@@ -122,7 +122,7 @@
 
                 <div class="col-12 mt-3">
 
-                    <div class="card links-shortener" v-for="item in resultadosBusca" :key="item.id">
+                    <div class="card links-shortener" :class="'bk-'+item.status" v-for="item in resultadosBusca" :key="item.id">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">

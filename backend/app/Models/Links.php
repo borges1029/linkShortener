@@ -18,8 +18,4 @@ class Links extends Model
         'clicks',
         'status'
     ];
-
-    public static function create(array $all)
-    {
-    }
 }

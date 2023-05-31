@@ -119,3 +119,29 @@ body {
   z-index: 1100 !important;
   max-width: 350px !important;
 }
+
+.bk-3 {
+  background-color: #d6dcff!important;
+}
+
+.bk-2 {
+  background-color: #d6eeff!important;
+}
+
+.bk-1 {
+  background-color: #d5f3e9!important;
+}
+
+.bk-0 {
+  background-color: #f3d5d5!important;
+}
+
+.row-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-form > form {
+  width: 30rem;
+}
