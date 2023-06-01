@@ -280,7 +280,7 @@
                 axios.get(`http://localhost:8000/api/links/${slug}`)
                     .then(response => {
                         this.getLinks()
-                        window.open(this.urlBase+slug, '_blank');
+                        window.open(response.data.url, '_blank');
                     })
                     .catch(error => {
                         console.error(error.response.data.error)
