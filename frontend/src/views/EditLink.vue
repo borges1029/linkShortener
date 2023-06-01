@@ -10,6 +10,14 @@
                 <form @submit.prevent="updateLink">
                     <h2>Edit Link</h2>
                     <div class="mb-3 mt-3">
+                        <label for="disabledSelect" class="form-label">Status do link</label>
+                        <select id="disabledSelect" class="form-select" v-model="itemsSave.status">
+                            <option value="" selected="" disabled="" hidden="">Selecione</option>
+                            <option value="1">Ativo</option>
+                            <option value="0">Inativo</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 mt-3">
                         <label for="destino" class="form-label">URL</label>
                         <input type="text" class="form-control" id="url" placeholder="https://example.com/my-long-url" v-model="itemsSave.url">
                     </div>
@@ -55,7 +63,7 @@
                     url: '',
                     title: '',
                     slug: '',
-                    status: 1
+                    status: '',
                 }
             }
         },
